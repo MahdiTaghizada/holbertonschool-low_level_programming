@@ -8,11 +8,11 @@
  */
 int main(void)
 {
-	char s[] = "Expect the best. Prepare for the worst. Capitalize on what comes.\n";
-	char *p;
+	int n;
 
-	p = leet(s);
-	printf("%s", p);
-	printf("%s", s);
+	n = 402;
+	printf("n=%d\n", n);
+	reset_to_98(&n);
+	printf("n=%d\n", n);
 	return (0);
 }

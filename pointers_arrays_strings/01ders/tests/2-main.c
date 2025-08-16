@@ -8,11 +8,11 @@
  */
 int main(void)
 {
-	char s[] = "Expect the best. Prepare for the worst. Capitalize on what comes.\n";
-	char *p;
+	char *str;
+	int len;
 
-	p = leet(s);
-	printf("%s", p);
-	printf("%s", s);
+	str = "Holberton!";
+	len = _strlen(str);
+	printf("%d\n", len);
 	return (0);
 }
