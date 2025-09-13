@@ -1,47 +1,21 @@
 #include "lists.h"
-#include <string.h>
 #include <stdlib.h>
 
-/* computes length of string */
-int _strlen(const char *str)
+/**
+ * free_list - frees linked list
+ * @head: linked list
+ *
+ * Return: void
+ */
+void free_list(list_t *head)
 {
-    int i;
+	list_t *current;
 
-    for (i = 0; str[i] != '\0'; i++)
-        ;
-    return i;
-}
-
-/* adds a new node at the end */
-list_t *add_node_end(list_t **head, const char *str)
-{
-    list_t *element, *h;
-
-    element = malloc(sizeof(list_t));
-    if (element == NULL)
-        return NULL;
-
-    element->str = strdup(str);
-    if (element->str == NULL)
-    {
-        free(element);
-        return NULL;
-    }
-
-    element->len = _strlen(str);
-    element->next = NULL;
-
-    if (*head == NULL)
-    {
-        *head = element;
-    }
-    else
-    {
-        h = *head;
-        while (h->next != NULL)
-            h = h->next;
-        h->next = element;
-    }
-
-    return element;
+	while (head != NULL)
+	{
+		free(head->str);
+		current = head;
+		head = head->next;
+		free(current);
+	}
 }
