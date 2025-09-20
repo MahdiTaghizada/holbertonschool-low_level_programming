@@ -1,17 +1,17 @@
 #include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
 #include "hash_tables.h"
 
 /**
- * main - check the code for
+ * hash_table_create - creates a hash table
+ * @size: size of hash table
  *
- * Return: Always EXIT_SUCCESS.
+ * Return: pointer to hash table
  */
 hash_table_t *hash_table_create(unsigned long int size)
 {
 	hash_table_t *ht;
 	unsigned long int i;
+
 	ht=malloc(sizeof(hash_table_t));
 	if(ht == NULL)
 		return(NULL);
